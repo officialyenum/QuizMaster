@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34afa7a21481d46c69fb9017054ae44c, type: 3}
   m_Name: New Question 1
   m_EditorClassIdentifier: 
-  question: Who dey breath ?
+  question: Who painted the Sistine Chapel?
   answers:
-  - Me
-  - Davido
-  - Wizkid
-  - Portable
-  correctAnswerIndex: 0
+  - Leonardo da Vinci
+  - Pablo Picasso
+  - Michelangelo
+  - Raphael
+  correctAnswerIndex: 2

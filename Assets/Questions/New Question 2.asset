@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34afa7a21481d46c69fb9017054ae44c, type: 3}
   m_Name: New Question 2
   m_EditorClassIdentifier: 
-  question: full meaning of awc ?
-  answers: []
+  question: Which of these is NOT a province in China?
+  answers:
+  - Yangtze
+  - Fujian
+  - Sichuan
+  - Guangdong
   correctAnswerIndex: 0
