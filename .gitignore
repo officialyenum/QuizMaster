@@ -8,6 +8,7 @@
 /[Oo]bj/
 /[Bb]uild/
 /[Bb]uilds/
+/[Ww]ebGL Builds/
 /[Ll]ogs/
 /[Mm]emoryCaptures/
 
@@ -43,6 +44,7 @@ ExportedObj/
 *.mdb
 *.opendb
 *.VC.db
+*.zip
 
 # Unity3D generated meta files
 *.pidb.meta

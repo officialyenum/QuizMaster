@@ -6,18 +6,34 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     Quiz quiz;
+    StartHandler startHandler;
+    DifficultyHandler difficultyHandler;
+    CategoryHandler categoryHandler;
+    CreditHandler creditHandler;
     EndScreen endScreen;
-    void Awake() 
+    public string difficulty = "easy";
+    public int category = 9;
+    public string categoryName = "General Knowlwedge";
+    void Awake()
     {
         quiz = FindObjectOfType<Quiz>();
+        startHandler = FindObjectOfType<StartHandler>();
+        difficultyHandler = FindObjectOfType<DifficultyHandler>();
+        categoryHandler = FindObjectOfType<CategoryHandler>();
+        creditHandler = FindObjectOfType<CreditHandler>();
         endScreen = FindObjectOfType<EndScreen>();
     }
 
     void Start()
     {
-        quiz.gameObject.SetActive(true);
+        startHandler.gameObject.SetActive(true);
+        quiz.gameObject.SetActive(false);
+        difficultyHandler.gameObject.SetActive(false);
+        categoryHandler.gameObject.SetActive(false);
+        creditHandler.gameObject.SetActive(false);
         endScreen.gameObject.SetActive(false);
     }
+
     void Update()
     {
         if (quiz.isComplete)
@@ -32,4 +48,6 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+    
 }

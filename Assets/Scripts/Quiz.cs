@@ -2,14 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 using TMPro;
 
 public class Quiz : MonoBehaviour
 {
+
     [Header("Questions")]
     [SerializeField] TextMeshProUGUI questionText;
-    [SerializeField] List<QuestionSO> questions;
-    QuestionSO currentQuestion;
+    List<Question> questions;
+    Question currentQuestion;
 
     [Header("Answers")]
     [SerializeField] GameObject[] answerButtons;
@@ -30,11 +32,16 @@ public class Quiz : MonoBehaviour
 
     [Header("Progress  Bar")]
     [SerializeField] Slider progressBar;
-    public bool isComplete;
+
+    public bool isComplete = false;
     void Awake()
     {
         timer = FindObjectOfType<Timer>();
         scoreKeeper = FindObjectOfType<ScoreKeeper>();
+    }
+
+    void Start()
+    {
         progressBar.maxValue = questions.Count;
         progressBar.value = 0;
     }
@@ -59,6 +66,11 @@ public class Quiz : MonoBehaviour
             DisplayAnswer(-1);
             SetButtonState(false);
         }
+    }
+
+    public void SetQuestions(List<Question> ques)
+    {
+        questions = ques;
     }
 
     void getAnswers(int length)
